@@ -1,4 +1,3 @@
-from unittest import expectedFailure
 from dotenv import load_dotenv
 import discord, json, os, random
 from datetime import datetime, timedelta
@@ -44,7 +43,7 @@ def joinguild(guild):
             json.dump({}, f, indent=4)
 
 def checkfiles(guild):
-    if os.path.isdir(os.path.join(f'{dir}' , 'settings', f'{guild}.json')) == True and os.path.isdir(os.path.join(f'{dir}' , 'ranks', f'{guild}.json')) == True and os.path.isdir(os.path.join(f'{dir}' , 'ranks', 'points', f'{guild}.json')) == True and os.path.isdir(os.path.join(f'{dir}' , 'ranks', 'points', f'{guild}.json')) == True:
+    if os.path.exists(os.path.join(f'{dir}' , 'settings', f'{guild}.json')) == True and os.path.exists(os.path.join(f'{dir}' , 'ranks', f'{guild}.json')) == True and os.path.exists(os.path.join(f'{dir}' , 'ranks', 'points', f'{guild}.json')) == True and os.path.exists(os.path.join(f'{dir}' , 'ranks', 'points', f'{guild}.json')) == True:
         return
     else:
         joinguild(guild)
